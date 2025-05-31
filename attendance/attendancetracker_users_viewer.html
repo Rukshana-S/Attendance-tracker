@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendancetracker.users Data Viewer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; }
+        .stats { background: #e8f5e8; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .user-card { border: 1px solid #ddd; margin: 10px 0; padding: 15px; border-radius: 5px; background: #fafafa; }
+        .user-header { font-weight: bold; color: #2c5aa0; font-size: 18px; }
+        .user-detail { margin: 5px 0; }
+        .label { font-weight: bold; color: #555; }
+        .refresh-btn { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        .refresh-btn:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗄️ Attendancetracker.users Collection Data</h1>
+        
+        <div class="stats">
+            <h3>📊 Collection Statistics</h3>
+            <p><span class="label">Database:</span> attendance_db</p>
+            <p><span class="label">Collection:</span> Attendancetracker.users</p>
+            <p><span class="label">Total Documents:</span> 4</p>
+            <p><span class="label">Last Updated:</span> 2025-05-31 23:00:40</p>
+        </div>
+        
+        <button class="refresh-btn" onclick="location.reload()">🔄 Refresh Data</button>
+        
+        <h3>👥 User Documents:</h3>
+
+        <div class="user-card">
+            <div class="user-header">👤 User #1: Rukshu</div>
+            <div class="user-detail"><span class="label">🆔 MongoDB ID:</span> 683b360aeadf57a91298cb89</div>
+            <div class="user-detail"><span class="label">🆔 Django ID:</span> 3</div>
+            <div class="user-detail"><span class="label">📧 Email:</span> abcd@gmail.com</div>
+            <div class="user-detail"><span class="label">👤 First Name:</span> RUKSHANA</div>
+            <div class="user-detail"><span class="label">👤 Last Name:</span> S</div>
+            <div class="user-detail"><span class="label">📅 Date Joined:</span> 2025-05-31 17:02:02.878000</div>
+            <div class="user-detail"><span class="label">📅 Last Login:</span> None</div>
+            <div class="user-detail"><span class="label">✅ Is Active:</span> True</div>
+            <div class="user-detail"><span class="label">🔐 Password Hash:</span> pbkdf2_sha256$216000$wfTO6cbs1...</div>
+        </div>
+
+        <div class="user-card">
+            <div class="user-header">👤 User #2: Ruks</div>
+            <div class="user-detail"><span class="label">🆔 MongoDB ID:</span> 683b36bf5ea68502cbd5718c</div>
+            <div class="user-detail"><span class="label">🆔 Django ID:</span> 4</div>
+            <div class="user-detail"><span class="label">📧 Email:</span> abcde@gmail.com</div>
+            <div class="user-detail"><span class="label">👤 First Name:</span> RUKSHANA</div>
+            <div class="user-detail"><span class="label">👤 Last Name:</span> S</div>
+            <div class="user-detail"><span class="label">📅 Date Joined:</span> 2025-05-31 17:05:03.819000</div>
+            <div class="user-detail"><span class="label">📅 Last Login:</span> None</div>
+            <div class="user-detail"><span class="label">✅ Is Active:</span> True</div>
+            <div class="user-detail"><span class="label">🔐 Password Hash:</span> pbkdf2_sha256$216000$mt396m3Tb...</div>
+        </div>
+
+        <div class="user-card">
+            <div class="user-header">👤 User #3: abcd</div>
+            <div class="user-detail"><span class="label">🆔 MongoDB ID:</span> 683b390ccdf511661bb6dd10</div>
+            <div class="user-detail"><span class="label">🆔 Django ID:</span> 8</div>
+            <div class="user-detail"><span class="label">📧 Email:</span> ab@gmail.com</div>
+            <div class="user-detail"><span class="label">👤 First Name:</span> RUKSHANA</div>
+            <div class="user-detail"><span class="label">👤 Last Name:</span> S</div>
+            <div class="user-detail"><span class="label">📅 Date Joined:</span> 2025-05-31 17:14:52.776000</div>
+            <div class="user-detail"><span class="label">📅 Last Login:</span> None</div>
+            <div class="user-detail"><span class="label">✅ Is Active:</span> True</div>
+            <div class="user-detail"><span class="label">🔐 Password Hash:</span> pbkdf2_sha256$216000$unby8OQZm...</div>
+        </div>
+
+        <div class="user-card">
+            <div class="user-header">👤 User #4: compass_test</div>
+            <div class="user-detail"><span class="label">🆔 MongoDB ID:</span> 683b3abdf39e67935c623005</div>
+            <div class="user-detail"><span class="label">🆔 Django ID:</span> 10</div>
+            <div class="user-detail"><span class="label">📧 Email:</span> compass@test.com</div>
+            <div class="user-detail"><span class="label">👤 First Name:</span> Compass</div>
+            <div class="user-detail"><span class="label">👤 Last Name:</span> Test</div>
+            <div class="user-detail"><span class="label">📅 Date Joined:</span> 2025-05-31 17:22:05.874000</div>
+            <div class="user-detail"><span class="label">📅 Last Login:</span> None</div>
+            <div class="user-detail"><span class="label">✅ Is Active:</span> True</div>
+            <div class="user-detail"><span class="label">🔐 Password Hash:</span> pbkdf2_sha256$216000$rfrx1m0TH...</div>
+        </div>
+
+    </div>
+    
+    <script>
+        console.log('Attendancetracker.users Data Viewer loaded');
+        console.log('Total users:', 4);
+    </script>
+</body>
+</html>

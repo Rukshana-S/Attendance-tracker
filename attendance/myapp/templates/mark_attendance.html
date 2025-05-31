@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            padding: 40px;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .student-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .attendance-button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .present {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .absent {
+            background-color: #c0392b;
+            color: white;
+        }
+
+        .attendance-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .attendance-button:active {
+            transform: translateY(1px);
+        }
+
+        button[type="submit"] {
+            padding: 12px 30px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3498db;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .student-entry {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .attendance-button {
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            button[type="submit"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Mark Attendance</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div>
+                {% for student in students %}
+                    <div class="student-entry">
+                        <label>{{ student.name }}</label>
+                        <input type="hidden" name="{{ student.id }}" value="Present">
+                        <button type="button" class="attendance-button present" onclick="toggleAttendance(this)">
+                            Present
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div style="text-align: center;">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function toggleAttendance(button) {
+            const hiddenInput = button.previousElementSibling;
+            if (button.classList.contains('present')) {
+                button.classList.remove('present');
+                button.classList.add('absent');
+                button.textContent = 'Absent';
+                hiddenInput.value = 'Absent';
+            } else {
+                button.classList.remove('absent');
+                button.classList.add('present');
+                button.textContent = 'Present';
+                hiddenInput.value = 'Present';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+

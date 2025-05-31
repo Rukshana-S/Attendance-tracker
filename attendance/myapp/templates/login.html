@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4; /* Light background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transform: translateY(-30px);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        h2 {
+            color: #2c3e50; /* Darker text color */
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fafafa;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #3498db;
+            background-color: #fff;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            input[type="text"], input[type="password"], button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Login</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div style="margin-bottom: 15px;">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit">Login</button>
+
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+        </form>
+
+        <div style="margin-top: 20px; text-align: center;">
+            <p style="color: #666; font-size: 14px;">
+                Don't have an account?
+                <a href="{% url 'signup' %}" style="color: #3498db; text-decoration: none; font-weight: 600;">Sign Up</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4; /* Light background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+            padding: 20px 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transform: translateY(-30px);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        h2 {
+            color: #2c3e50; /* Darker text color */
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fafafa;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+            border-color: #3498db;
+            background-color: #fff;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #229954;
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .success-message {
+            color: #27ae60;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .password-requirements {
+            font-size: 12px;
+            color: #666;
+            text-align: left;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .login-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .login-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            input[type="text"], input[type="password"], input[type="email"], button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Create Account</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" placeholder="Enter first name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Enter last name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter email address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password1">Password</label>
+                <input type="password" id="password1" name="password1" placeholder="Enter password" required>
+            </div>
+            
+            <div class="password-requirements">
+                Password must be at least 8 characters long and contain letters and numbers.
+            </div>
+
+            <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input type="password" id="password2" name="password2" placeholder="Confirm password" required>
+            </div>
+
+            <button type="submit">Create Account</button>
+
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+            
+            {% if success %}
+                <p class="success-message">{{ success }}</p>
+            {% endif %}
+        </form>
+        
+        <div class="login-link">
+            <p style="color: #666; font-size: 14px;">
+                Already have an account? 
+                <a href="{% url 'login' %}">Login</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

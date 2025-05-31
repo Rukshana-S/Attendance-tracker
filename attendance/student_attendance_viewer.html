@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Attendance Records</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; }
+        .stats { background: #e8f5e8; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .record-card { border: 1px solid #ddd; margin: 10px 0; padding: 15px; border-radius: 5px; background: #fafafa; }
+        .record-header { font-weight: bold; color: #2c5aa0; font-size: 16px; }
+        .record-detail { margin: 5px 0; display: inline-block; margin-right: 20px; }
+        .label { font-weight: bold; color: #555; }
+        .status-present { color: #4CAF50; font-weight: bold; }
+        .status-absent { color: #f44336; font-weight: bold; }
+        .status-late { color: #ff9800; font-weight: bold; }
+        .refresh-btn { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Student Attendance Records</h1>
+        
+        <div class="stats">
+            <h3>📈 Collection Information</h3>
+            <p><span class="label">Collection:</span> Attendancetracker.student_attendance</p>
+            <p><span class="label">Total Records:</span> 556</p>
+            <p><span class="label">Last Updated:</span> 2025-05-31 23:18:35</p>
+        </div>
+        
+        <button class="refresh-btn" onclick="location.reload()">🔄 Refresh Data</button>
+        
+        <h3>📋 Recent Attendance Records:</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Roll Number</th>
+                    <th>Class</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Session</th>
+                    <th>Subject</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>SNEHA PATEL</td>
+                    <td>CSE005</td>
+                    <td>CSE-B</td>
+                    <td>2025-05-30</td>
+                    <td>15:44:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Computer Networks</td>
+                    <td>Room 181</td>
+                </tr>
+
+                <tr>
+                    <td>ANITA REDDY</td>
+                    <td>CSE007</td>
+                    <td>CSE-B</td>
+                    <td>2025-05-30</td>
+                    <td>15:42:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Computer Networks</td>
+                    <td>Room 171</td>
+                </tr>
+
+                <tr>
+                    <td>RUKSHANA S</td>
+                    <td>CSE001</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:42:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Operating Systems</td>
+                    <td>Room 130</td>
+                </tr>
+
+                <tr>
+                    <td>SNEHA PATEL</td>
+                    <td>CSE005</td>
+                    <td>CSE-B</td>
+                    <td>2025-05-30</td>
+                    <td>15:40:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Database Management</td>
+                    <td>Room 192</td>
+                </tr>
+
+                <tr>
+                    <td>RUKSHANA S</td>
+                    <td>CSE001</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:40:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Computer Networks</td>
+                    <td>Room 167</td>
+                </tr>
+
+                <tr>
+                    <td>KARTHIK RAO</td>
+                    <td>CSE008</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:37:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Operating Systems</td>
+                    <td>Room 158</td>
+                </tr>
+
+                <tr>
+                    <td>PRIYA SHARMA</td>
+                    <td>CSE003</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:36:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Data Structures</td>
+                    <td>Room 109</td>
+                </tr>
+
+                <tr>
+                    <td>RAHUL VERMA</td>
+                    <td>CSE004</td>
+                    <td>CSE-B</td>
+                    <td>2025-05-30</td>
+                    <td>15:34:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Database Management</td>
+                    <td>Room 178</td>
+                </tr>
+
+                <tr>
+                    <td>RAHUL VERMA</td>
+                    <td>CSE004</td>
+                    <td>CSE-B</td>
+                    <td>2025-05-30</td>
+                    <td>15:33:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Software Engineering</td>
+                    <td>Room 139</td>
+                </tr>
+
+                <tr>
+                    <td>ARJUN KUMAR</td>
+                    <td>CSE002</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:33:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Operating Systems</td>
+                    <td>Room 140</td>
+                </tr>
+
+                <tr>
+                    <td>PRIYA SHARMA</td>
+                    <td>CSE003</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:29:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Database Management</td>
+                    <td>Room 152</td>
+                </tr>
+
+                <tr>
+                    <td>ARJUN KUMAR</td>
+                    <td>CSE002</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:29:00</td>
+                    <td><span class="status-absent">Absent</span></td>
+                    <td>Tutorial</td>
+                    <td>Software Engineering</td>
+                    <td>Room 165</td>
+                </tr>
+
+                <tr>
+                    <td>RAHUL VERMA</td>
+                    <td>CSE004</td>
+                    <td>CSE-B</td>
+                    <td>2025-05-30</td>
+                    <td>15:28:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Computer Networks</td>
+                    <td>Room 102</td>
+                </tr>
+
+                <tr>
+                    <td>VIKRAM SINGH</td>
+                    <td>CSE006</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:23:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Data Structures</td>
+                    <td>Room 164</td>
+                </tr>
+
+                <tr>
+                    <td>VIKRAM SINGH</td>
+                    <td>CSE006</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:23:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Computer Networks</td>
+                    <td>Room 177</td>
+                </tr>
+
+                <tr>
+                    <td>ANITA REDDY</td>
+                    <td>CSE007</td>
+                    <td>CSE-B</td>
+                    <td>2025-05-30</td>
+                    <td>15:23:00</td>
+                    <td><span class="status-late">Late</span></td>
+                    <td>Tutorial</td>
+                    <td>Database Management</td>
+                    <td>Room 132</td>
+                </tr>
+
+                <tr>
+                    <td>PRIYA SHARMA</td>
+                    <td>CSE003</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:23:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Operating Systems</td>
+                    <td>Room 180</td>
+                </tr>
+
+                <tr>
+                    <td>KARTHIK RAO</td>
+                    <td>CSE008</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:22:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Data Structures</td>
+                    <td>Room 114</td>
+                </tr>
+
+                <tr>
+                    <td>KARTHIK RAO</td>
+                    <td>CSE008</td>
+                    <td>CSE-A</td>
+                    <td>2025-05-30</td>
+                    <td>15:21:00</td>
+                    <td><span class="status-present">Present</span></td>
+                    <td>Tutorial</td>
+                    <td>Database Management</td>
+                    <td>Room 170</td>
+                </tr>
+
+                <tr>
+                    <td>RAHUL VERMA</td>
+                    <td>CSE004</td>
+                    <td>CSE-B</td>
+                    <td>2025-05-30</td>
+                    <td>15:21:00</td>
+                    <td><span class="status-late">Late</span></td>
+                    <td>Tutorial</td>
+                    <td>Data Structures</td>
+                    <td>Room 170</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

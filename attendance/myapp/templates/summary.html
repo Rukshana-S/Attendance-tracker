@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Summary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        h2 {
+            color: #2980b9; /* Bright Blue */
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            color: #2c3e50; /* Darker Gray for subheadings */
+            margin-top: 40px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        th {
+            background-color: #3498db; /* Blue for headers */
+            color: white;
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light Gray for alternating rows */
+        }
+
+        tr:nth-child(odd) {
+            background-color: white; /* Default white for odd rows */
+        }
+
+        tr:hover {
+            background-color: #e6f7ff; /* Light blue hover effect */
+        }
+
+        /* Defaulters Table */
+        .defaulters th {
+            background-color: #e74c3c; /* Red for defaulters header */
+        }
+
+        .defaulters td {
+            background-color: #f9e3e3; /* Light red background for defaulters rows */
+        }
+
+        .no-defaulters {
+            text-align: center;
+            padding: 12px;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        .percentage {
+            font-weight: bold;
+            color: #27ae60; /* Green color for good attendance */
+        }
+
+        .low-attendance {
+            font-weight: bold;
+            color: #c0392b; /* Red color for defaulters */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Attendance Summary</h2>
+
+        <!-- All Students Section -->
+        <h3>All Students</h3>
+        <table>
+            <tr>
+                <th>Student</th>
+                <th>Class</th>
+                <th>Attendance Percentage</th>
+            </tr>
+            {% for entry in data %}
+            <tr>
+                <td>{{ entry.student.name }}</td>
+                <td>{{ entry.student.class_name }}</td>
+                <td class="percentage">{{ entry.percentage }}%</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Defaulters Section -->
+        <h3>Defaulters (Below 75%)</h3>
+        <table class="defaulters">
+            <tr>
+                <th>Student</th>
+                <th>Class</th>
+                <th>Attendance Percentage</th>
+            </tr>
+            {% for entry in defaulters %}
+            <tr>
+                <td>{{ entry.student.name }}</td>
+                <td>{{ entry.student.class_name }}</td>
+                <td class="low-attendance">{{ entry.percentage }}%</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" class="no-defaulters">No defaulters found.</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+</html>
