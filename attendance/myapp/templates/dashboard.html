@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg,rgb(255, 255, 255),rgb(244, 251, 255)); /* Gradient background */
+            color: #fff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50; /* Deep Blue color */
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        a {
+            padding: 14px 20px;
+            background-color: #3498db; /* Soft Blue color */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        a:hover {
+            background-color: #2980b9; /* Darker Blue on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        a:active {
+            transform: translateY(2px);
+        }
+
+        a:focus {
+            outline: none;
+            box-shadow: 0 0 5px 3px rgba(52, 152, 219, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px;
+                width: 80%;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Welcome to Your Dashboard</h2>
+        
+        <div class="link-container">
+            <a href="/mark/">Mark Attendance</a>
+            <a href="/records/">View Attendance Records</a>
+            <a href="/summary/">Attendance Summary</a>
+            <a href="{% url 'export_pdf' %}" target="_blank">Download Full Attendance PDF</a>
+            <a href="{% url 'export_defaulter_pdf' %}" target="_blank">Download Defaulter List PDF</a>
+            <a href="/logout/">Logout</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
